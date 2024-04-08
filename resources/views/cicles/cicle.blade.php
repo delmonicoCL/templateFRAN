@@ -2,13 +2,14 @@
 
 @section('contenido')
     
-@include('partials.mensajes')
+{{-- @include('partials.mensajes') --}} 
 
 
 <div class="card mt-2">
     <div class="card-body">
         <h5 class="card-title font-weight-bold">Cicle</h5>
-        <form action="">
+        <form action="{{action([App\Http\Controllers\CicleController::class, 'store']) }}" method="POST">
+            @csrf
 
             <div class="form-group row">
                 <label for="sigles" class="col-sm-1 col-form-label">Sigles</label>
@@ -36,52 +37,25 @@
                         <input type="checkbox" class="custom-control-input" id="actiu" name="actiu" value="actiu">
                         <label class="custom-control-label" for="actiu"></label>
                     </div>
-
-
                 </div>
             </div>
 
+               <div class="form-group row">
+                 <div class="col-sm-12">
+                      <a href="" class="btn btn-secondary float-right ml-1"> <i class="fa fa-times" aria-hidden="true"></i>Cancelar</a>
+                    <button type="submit" class="btn btn-primary float-right"><i class="fa fa-check" aria-hidden="true"></i> Aceptar</button>
+                </div>
+                </div>
+            </div>
 
-
-
-
-</form>
+        </form>
 
 
 
 
     </div>
 
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection

@@ -26,7 +26,7 @@
               Dades Mestres
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url ('cicle')}}">Cicles</a></li>
+              <li><a class="dropdown-item" href="{{ url ('cicles')}}">Cicles</a></li>
               
             </ul>
           </li>

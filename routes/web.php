@@ -8,4 +8,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('cicle', CicleController::class);
+Route::resource('cicles', CicleController::class);

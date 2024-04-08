@@ -74,10 +74,24 @@
         </div>
         @endif
         
-        {{ $cicle->actiu }}</td>
-
-</tr>
+        {{ $cicle->actiu }}
     
+    </td>
+
+    <td>
+        <form class="float-right ml-1" action="{{action([App\Http\Controllers\CicleController::class,'destroy'], ['cicle'=> $cicle->id] )}}" method="POST">
+           @csrf 
+           @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger"> <i class="fa fa-trash" 
+                aria-hidden="true"></i> Borrar </button>
+        </form>
+         <form action="" class="float-right">
+            <button type="submit" class="btn btn-sm btn-warning"> <i class="fa fa-edit" 
+                aria-hidden="true"></i> Editar </button>
+        </form>
+    </td>
+</tr>
+   
 @endforeach
 
     </tbody>
@@ -85,6 +99,7 @@
     
   {{ $cicles->links() }}
 
+<a href="{{ url('cicles/create')}}" class="btn btn-primary btn-float-afegir"><i class="fa fa-plus-circle" aria-hidden="true"></i>Nuevo Ciclo</a>
 
 
 @endsection
